@@ -15,9 +15,9 @@ class Mux2 extends Module {
 
   // ***** your code starts here *****
 
-  // res := (a & !sel) | (b & sel) boolean solution for mux
+  // res := (a & !sel) | (b & sel) //boolean solution for mux
 
-  /*when (!sel) { Mux using when (cond) function
+  /*when (!sel) { //Mux using when (cond) function
     res:= a
   } .otherwise {
     res:= b
