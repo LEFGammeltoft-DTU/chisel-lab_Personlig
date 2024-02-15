@@ -1,0 +1,54 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Mux4Spec, org.scalatest.tools.Framework$$anon$1@1d7bfc9e, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Count15Spec, org.scalatest.tools.Framework$$anon$1@1d7bfc9e, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(UseMux2Spec, org.scalatest.tools.Framework$$anon$1@1d7bfc9e, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Count6WaveSpec, org.scalatest.tools.Framework$$anon$1@1d7bfc9e, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Mux2Spec, org.scalatest.tools.Framework$$anon$1@1d7bfc9e, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(AccuSpec, org.scalatest.tools.Framework$$anon$1@1d7bfc9e, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(DelaySpec, org.scalatest.tools.Framework$$anon$1@1d7bfc9e, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(Count6Spec, org.scalatest.tools.Framework$$anon$1@1d7bfc9e, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mMux4Spec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mMux4[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should pass *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCount15Spec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCount15[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should pass *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  io_dout=0 (0x0) did not equal expected=1 (0x1) (lines in Count15Spec.scala: 10, 9, 7) (Count15Spec.scala:10)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  io_y=0 (0x0) did not equal expected=1 (0x1) (lines in Mux4Spec.scala: 20, 9, 8, 7) (Mux4Spec.scala:20)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCount6Spec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCount6[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should pass *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mMux2Spec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  io_dout=0 (0x0) did not equal expected=1 (0x1) (lines in Count6Spec.scala: 10, 9, 7) (Count6Spec.scala:10)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mMux2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAccuSpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAccu[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should pass *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  io_dout=0 (0x0) did not equal expected=7 (0x7) (lines in AccuSpec.scala: 16, 7) (AccuSpec.scala:16)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCount6WaveSpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mCountWave6[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- should pass[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mDelaySpec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mDelay[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should pass *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  io_dout=123 (0x7b) did not equal expected=0 (0x0) (lines in DelaySpec.scala: 14, 7) (DelaySpec.scala:14)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mUseMux2Spec:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mUseMux2[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- should pass *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  io_dout=0 (0x0) did not equal expected=1 (0x1) (lines in UseMux2Spec.scala: 10, 7) (UseMux2Spec.scala:10)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 5 seconds, 916 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 8[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 8, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 2, failed 6, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 6 TESTS FAILED ***[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Count6WaveSpec[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Mux2Spec[0m
+[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	Count6Spec[0m
+[0m[[0m[31merror[0m] [0m[0m	AccuSpec[0m
+[0m[[0m[31merror[0m] [0m[0m	Mux4Spec[0m
+[0m[[0m[31merror[0m] [0m[0m	Count15Spec[0m
+[0m[[0m[31merror[0m] [0m[0m	UseMux2Spec[0m
+[0m[[0m[31merror[0m] [0m[0m	DelaySpec[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m
