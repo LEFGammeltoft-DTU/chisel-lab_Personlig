@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Lauri\Desktop\GitHub\chisel-lab_Personlig\lab4\src\test\scala\HeapTest.scala:101:3: unclosed comment[0m
+[0m[[0m[31merror[0m] [0m[0m  /*it should "deassert full after one number is removed when it was full" in {[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Lauri\Desktop\GitHub\chisel-lab_Personlig\lab4\src\test\scala\HeapTest.scala:161:2: '}' expected but eof found.[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

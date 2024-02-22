@@ -19,10 +19,10 @@ class Mux5 extends Module {
   io.y := 1.U
   switch(io.sel) {
     is("b000".U) { io.y := io.a }
-    is("b001".U) { io.y := 1.U }
+    is("b001".U) { io.y := io.b } // rettet fra 1.U til det rigtige io.b
     is("b010".U) { io.y := io.c }
     is("b011".U) { io.y := io.d }
-    is("b101".U) { io.y := io.e }
+    is("b100".U) { io.y := io.e } // rettet fra b101 til det rigtige b100
   }
 }
 
