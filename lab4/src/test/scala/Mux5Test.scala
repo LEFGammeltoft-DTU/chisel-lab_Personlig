@@ -6,7 +6,7 @@ class Mux5Test extends AnyFlatSpec with ChiselScalatestTester {
   "Mux5 " should "pass" in {
     test(new Mux5()) { dut =>
 
-      for (l <- 0 until 5) {
+      for (l <- 0 until 5) { //
         dut.io.sel.poke(l.U)
         if (l === 0) {
           for (i <- 0 to 5) {

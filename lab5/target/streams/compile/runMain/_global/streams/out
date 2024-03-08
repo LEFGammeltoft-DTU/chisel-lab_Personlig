@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0mjava.lang.NumberFormatException: For input string: "8" under radix 8[0m
+[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
+[0m[[0m[31merror[0m] [0m[0m	at SevenSegDecoder.<init>(SevenSegDecoder.scala:24)[0m
+[0m[[0m[31merror[0m] [0m[0m	at SevenSegDecoder$.$anonfun$new$35(SevenSegDecoder.scala:41)[0m
+[0m[[0m[31merror[0m] [0m[0m	at ... ()[0m
+[0m[[0m[31merror[0m] [0m[0m	at ... (Stack trace trimmed to user code only. Rerun with --full-stacktrace to see the full stack trace)[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mrunMain[0m) java.lang.NumberFormatException: For input string: "8" under radix 8[0m
