@@ -1,5 +1,5 @@
 $date
-2024-03-07T15:23+0000
+2024-03-14T14:09+0000
 $end
 $version
 0.2
@@ -11,7 +11,7 @@ $timescale 1ns  $end
 $scope module CountSevenSeg $end
  $var wire 4 ! io_an $end
  $var wire 26 # reg1 $end
- $var wire 4 $ count $end
+ $var wire 4 $ tick $end
  $var wire 1 % clock $end
  $var wire 1 & reset $end
  $var wire 7 ' io_seg $end

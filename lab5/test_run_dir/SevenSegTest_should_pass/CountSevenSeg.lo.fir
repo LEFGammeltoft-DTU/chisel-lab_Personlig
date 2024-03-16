@@ -51,22 +51,22 @@ circuit CountSevenSeg :
     output io_an : UInt<4>
 
     inst sevensegdec of SevenSegDecoder @[CountSevenSeg.scala 8:25]
-    reg count : UInt<4>, clock with :
-      reset => (UInt<1>("h0"), count) @[CountSevenSeg.scala 11:22]
+    reg tick : UInt<4>, clock with :
+      reset => (UInt<1>("h0"), tick) @[CountSevenSeg.scala 11:21]
     reg reg1 : UInt<26>, clock with :
       reset => (UInt<1>("h0"), reg1) @[CountSevenSeg.scala 20:19]
     node _reg1_T = sub(reg1, UInt<1>("h1")) @[CountSevenSeg.scala 22:16]
     node _reg1_T_1 = tail(_reg1_T, 1) @[CountSevenSeg.scala 22:16]
     node _T = eq(reg1, UInt<1>("h0")) @[CountSevenSeg.scala 24:14]
-    node _count_T = add(count, UInt<1>("h1")) @[CountSevenSeg.scala 25:20]
-    node _count_T_1 = tail(_count_T, 1) @[CountSevenSeg.scala 25:20]
-    node _GEN_0 = mux(_T, _count_T_1, count) @[CountSevenSeg.scala 24:23 25:11 11:22]
+    node _tick_T = add(tick, UInt<1>("h1")) @[CountSevenSeg.scala 25:18]
+    node _tick_T_1 = tail(_tick_T, 1) @[CountSevenSeg.scala 25:18]
+    node _GEN_0 = mux(_T, _tick_T_1, tick) @[CountSevenSeg.scala 24:23 25:10 11:21]
     node _GEN_1 = mux(_T, UInt<26>("h2faf080"), _reg1_T_1) @[CountSevenSeg.scala 24:23 26:10 22:8]
     node sevSeg = sevensegdec.io_seg @[CountSevenSeg.scala 10:27 14:10]
     io_seg <= sevSeg @[CountSevenSeg.scala 30:10]
     io_an <= UInt<4>("he") @[CountSevenSeg.scala 31:9]
     sevensegdec.clock <= clock
     sevensegdec.reset <= reset
-    sevensegdec.io_sw <= count @[CountSevenSeg.scala 15:21]
-    count <= mux(reset, UInt<4>("h0"), _GEN_0) @[CountSevenSeg.scala 11:{22,22}]
+    sevensegdec.io_sw <= tick @[CountSevenSeg.scala 15:21]
+    tick <= mux(reset, UInt<4>("h0"), _GEN_0) @[CountSevenSeg.scala 11:{21,21}]
     reg1 <= mux(reset, UInt<26>("h2faf080"), _GEN_1) @[CountSevenSeg.scala 20:{19,19}]
