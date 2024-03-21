@@ -126,6 +126,7 @@ endmodule
 module DisplayMultiplexer(
   input        clock,
   input        reset,
+  input  [7:0] io_sum,
   input  [7:0] io_price,
   output [6:0] io_seg,
   output [3:0] io_an
@@ -134,49 +135,49 @@ module DisplayMultiplexer(
   reg [31:0] _RAND_0;
   reg [31:0] _RAND_1;
 `endif // RANDOMIZE_REG_INIT
-  wire [7:0] pricebcd_io_address; // @[DisplayMultiplexer.scala 28:24]
-  wire [7:0] pricebcd_io_data; // @[DisplayMultiplexer.scala 28:24]
-  wire [7:0] sumbcd_io_address; // @[DisplayMultiplexer.scala 30:22]
-  wire [7:0] sumbcd_io_data; // @[DisplayMultiplexer.scala 30:22]
-  wire [3:0] sevensegdec_io_in; // @[DisplayMultiplexer.scala 36:27]
-  wire [6:0] sevensegdec_io_out; // @[DisplayMultiplexer.scala 36:27]
-  wire [16:0] _onekhzReg_T_1 = 17'h186a0 - 17'h1; // @[DisplayMultiplexer.scala 37:36]
-  reg [16:0] onekhzReg; // @[DisplayMultiplexer.scala 37:26]
-  wire  onekhztick = onekhzReg == 17'h0; // @[DisplayMultiplexer.scala 38:30]
-  wire [16:0] _onekhzReg_T_3 = onekhzReg - 17'h1; // @[DisplayMultiplexer.scala 39:26]
-  reg [3:0] shiftReg; // @[DisplayMultiplexer.scala 42:25]
-  wire [4:0] _shiftReg_T_1 = {shiftReg, 1'h0}; // @[DisplayMultiplexer.scala 48:52]
-  wire [4:0] _shiftReg_T_2 = shiftReg[3] ? 5'h1 : _shiftReg_T_1; // @[DisplayMultiplexer.scala 48:18]
-  wire [4:0] _GEN_0 = onekhztick ? _shiftReg_T_2 : {{1'd0}, shiftReg}; // @[DisplayMultiplexer.scala 47:18 48:12 42:25]
-  wire [3:0] _GEN_1 = 4'h8 == shiftReg ? sumbcd_io_data[7:4] : 4'h0; // @[DisplayMultiplexer.scala 50:19 41:21 61:25]
-  wire [3:0] _GEN_2 = 4'h4 == shiftReg ? sumbcd_io_data[3:0] : _GEN_1; // @[DisplayMultiplexer.scala 50:19 58:25]
-  wire [3:0] _GEN_3 = 4'h2 == shiftReg ? pricebcd_io_data[7:4] : _GEN_2; // @[DisplayMultiplexer.scala 50:19 55:25]
-  wire [6:0] sevSeg = sevensegdec_io_out; // @[DisplayMultiplexer.scala 33:27 67:10]
-  wire [4:0] _GEN_5 = reset ? 5'h1 : _GEN_0; // @[DisplayMultiplexer.scala 42:{25,25}]
-  BcdTable pricebcd ( // @[DisplayMultiplexer.scala 28:24]
+  wire [7:0] pricebcd_io_address; // @[DisplayMultiplexer.scala 30:24]
+  wire [7:0] pricebcd_io_data; // @[DisplayMultiplexer.scala 30:24]
+  wire [7:0] sumbcd_io_address; // @[DisplayMultiplexer.scala 32:22]
+  wire [7:0] sumbcd_io_data; // @[DisplayMultiplexer.scala 32:22]
+  wire [3:0] sevensegdec_io_in; // @[DisplayMultiplexer.scala 38:27]
+  wire [6:0] sevensegdec_io_out; // @[DisplayMultiplexer.scala 38:27]
+  wire [16:0] _onekhzReg_T_1 = 17'h186a0 - 17'h1; // @[DisplayMultiplexer.scala 39:36]
+  reg [16:0] onekhzReg; // @[DisplayMultiplexer.scala 39:26]
+  wire  onekhztick = onekhzReg == 17'h0; // @[DisplayMultiplexer.scala 40:30]
+  wire [16:0] _onekhzReg_T_3 = onekhzReg - 17'h1; // @[DisplayMultiplexer.scala 41:26]
+  reg [3:0] shiftReg; // @[DisplayMultiplexer.scala 44:25]
+  wire [4:0] _shiftReg_T_1 = {shiftReg, 1'h0}; // @[DisplayMultiplexer.scala 47:52]
+  wire [4:0] _shiftReg_T_2 = shiftReg[3] ? 5'h1 : _shiftReg_T_1; // @[DisplayMultiplexer.scala 47:18]
+  wire [4:0] _GEN_0 = onekhztick ? _shiftReg_T_2 : {{1'd0}, shiftReg}; // @[DisplayMultiplexer.scala 46:18 47:12 44:25]
+  wire [3:0] _GEN_1 = 4'h8 == shiftReg ? sumbcd_io_data[7:4] : 4'h0; // @[DisplayMultiplexer.scala 49:19 43:21 60:25]
+  wire [3:0] _GEN_2 = 4'h4 == shiftReg ? sumbcd_io_data[3:0] : _GEN_1; // @[DisplayMultiplexer.scala 49:19 57:25]
+  wire [3:0] _GEN_3 = 4'h2 == shiftReg ? pricebcd_io_data[7:4] : _GEN_2; // @[DisplayMultiplexer.scala 49:19 54:25]
+  wire [6:0] sevSeg = sevensegdec_io_out; // @[DisplayMultiplexer.scala 35:27 66:10]
+  wire [4:0] _GEN_5 = reset ? 5'h1 : _GEN_0; // @[DisplayMultiplexer.scala 44:{25,25}]
+  BcdTable pricebcd ( // @[DisplayMultiplexer.scala 30:24]
     .io_address(pricebcd_io_address),
     .io_data(pricebcd_io_data)
   );
-  BcdTable sumbcd ( // @[DisplayMultiplexer.scala 30:22]
+  BcdTable sumbcd ( // @[DisplayMultiplexer.scala 32:22]
     .io_address(sumbcd_io_address),
     .io_data(sumbcd_io_data)
   );
-  SevenSegDec sevensegdec ( // @[DisplayMultiplexer.scala 36:27]
+  SevenSegDec sevensegdec ( // @[DisplayMultiplexer.scala 38:27]
     .io_in(sevensegdec_io_in),
     .io_out(sevensegdec_io_out)
   );
-  assign io_seg = ~sevSeg; // @[DisplayMultiplexer.scala 70:13]
-  assign io_an = ~shiftReg; // @[DisplayMultiplexer.scala 71:12]
-  assign pricebcd_io_address = io_price; // @[DisplayMultiplexer.scala 29:23]
-  assign sumbcd_io_address = io_price; // @[DisplayMultiplexer.scala 31:21]
-  assign sevensegdec_io_in = 4'h1 == shiftReg ? pricebcd_io_data[3:0] : _GEN_3; // @[DisplayMultiplexer.scala 50:19 52:25]
+  assign io_seg = ~sevSeg; // @[DisplayMultiplexer.scala 69:13]
+  assign io_an = ~shiftReg; // @[DisplayMultiplexer.scala 70:12]
+  assign pricebcd_io_address = io_price; // @[DisplayMultiplexer.scala 31:23]
+  assign sumbcd_io_address = io_sum; // @[DisplayMultiplexer.scala 33:21]
+  assign sevensegdec_io_in = 4'h1 == shiftReg ? pricebcd_io_data[3:0] : _GEN_3; // @[DisplayMultiplexer.scala 49:19 51:25]
   always @(posedge clock) begin
-    if (reset) begin // @[DisplayMultiplexer.scala 37:26]
-      onekhzReg <= _onekhzReg_T_1; // @[DisplayMultiplexer.scala 37:26]
+    if (reset) begin // @[DisplayMultiplexer.scala 39:26]
+      onekhzReg <= _onekhzReg_T_1; // @[DisplayMultiplexer.scala 39:26]
     end else begin
-      onekhzReg <= _onekhzReg_T_3; // @[DisplayMultiplexer.scala 39:13]
+      onekhzReg <= _onekhzReg_T_3; // @[DisplayMultiplexer.scala 41:13]
     end
-    shiftReg <= _GEN_5[3:0]; // @[DisplayMultiplexer.scala 42:{25,25}]
+    shiftReg <= _GEN_5[3:0]; // @[DisplayMultiplexer.scala 44:{25,25}]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -235,12 +236,14 @@ module Display(
 );
   wire  dispMux_clock; // @[Display.scala 15:23]
   wire  dispMux_reset; // @[Display.scala 15:23]
+  wire [7:0] dispMux_io_sum; // @[Display.scala 15:23]
   wire [7:0] dispMux_io_price; // @[Display.scala 15:23]
   wire [6:0] dispMux_io_seg; // @[Display.scala 15:23]
   wire [3:0] dispMux_io_an; // @[Display.scala 15:23]
   DisplayMultiplexer dispMux ( // @[Display.scala 15:23]
     .clock(dispMux_clock),
     .reset(dispMux_reset),
+    .io_sum(dispMux_io_sum),
     .io_price(dispMux_io_price),
     .io_seg(dispMux_io_seg),
     .io_an(dispMux_io_an)
@@ -249,5 +252,6 @@ module Display(
   assign io_an = dispMux_io_an; // @[Display.scala 23:9]
   assign dispMux_clock = clock;
   assign dispMux_reset = reset;
+  assign dispMux_io_sum = io_sw[15:8]; // @[Display.scala 19:26]
   assign dispMux_io_price = io_sw[7:0]; // @[Display.scala 18:28]
 endmodule

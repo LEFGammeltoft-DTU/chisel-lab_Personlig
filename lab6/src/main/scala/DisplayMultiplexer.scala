@@ -30,7 +30,7 @@ class DisplayMultiplexer(maxCount: Int) extends Module {
   val pricebcd = Module(new BcdTable) //Bcd modul til prisen
   pricebcd.io.address := io.price // sender prisens værdi fra io.sw til bcd funktion
   val sumbcd = Module(new BcdTable) //samme for sum som for pris
-  sumbcd.io.address := io.price
+  sumbcd.io.address := io.sum
 
   val sevSeg = WireDefault("b1111111".U(7.W))
   val select = WireDefault("b0001".U(4.W))
