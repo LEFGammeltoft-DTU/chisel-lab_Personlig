@@ -8,21 +8,19 @@ class CountSevenSeg extends Module {
 val sevensegdec = Module(new SevenSegDecoder())
 
   val sevSeg = WireDefault("b1111111".U(7.W))
-  val tick = RegInit("h0".U(4.W))
-
+  val count = RegInit("h0".U(4.W))
+  val tick = reg1 === 0.U
 
   sevSeg := sevensegdec.io.seg
   sevensegdec.io.sw := tick
 
-
-
   // *** your code starts here
-val reg1 = RegInit(50000000.U(26.W))
+val reg1 = RegInit(50000000.U-1.U (26.W))
 
   reg1 := reg1 - 1.U
 
-  when (reg1 === 0.U) {
-    tick := tick + 1.U
+  when (tick) {
+    count := count + 1.U
     reg1 := 50000000.U
   }
   // *** your code ends here
