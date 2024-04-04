@@ -12,7 +12,7 @@ class SerialPort(frequ: Int) extends Module {
   io.tx := true.B
   io.led := true.B
 }
-
+//hello
 // generate Verilog
 object SerialPort extends App {
   emitVerilog(new SerialPort(100000000))
