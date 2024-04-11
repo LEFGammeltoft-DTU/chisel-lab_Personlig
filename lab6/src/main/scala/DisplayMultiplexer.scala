@@ -16,7 +16,7 @@ class BcdTable extends Module { //binary to decimal bcd converter fra Martin
   }
 
   io.data := table(io.address)
-}
+} //end of BCD
 
 
 class DisplayMultiplexer(maxCount: Int) extends Module {
